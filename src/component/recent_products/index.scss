@@ -1,0 +1,27 @@
+/*
+* @Author: Administrator
+* @Date:   2018-02-07 14:41:52
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-02-07 15:31:37
+*/
+.recent-products{
+  width: 100%;
+  overflow: hidden;
+}
+.products-container{
+  width: 100%;
+  overflow: hidden;
+}
+.recent-product-item{
+  width: 50%;
+  float: left;
+  padding:0.1rem 1% 0;
+  text-align: center;
+}
+.recent-product-item img{
+  width: 80%;
+}
+.recent-product-item .product-info{
+  width: 100%;
+  padding-bottom: 0.1rem;
+}

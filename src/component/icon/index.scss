@@ -1,0 +1,28 @@
+/*
+* @Author: Administrator
+* @Date:   2018-02-07 09:58:20
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-02-07 14:30:57
+*/
+.icon{
+  font-size: 0.14rem;
+  color: #989898;
+  text-align: center;
+}
+.icon .anticon{
+  font-size: 0.2rem;
+  display: block;
+  margin: 0 auto;
+  color: #989898;
+  font-weight: lighter;
+
+}
+.icon span{
+  font-size: 0.12rem;
+}
+.active .icon{
+  color: #AB956D;
+}
+.active .icon .anticon{
+  color: #AB956D;
+}

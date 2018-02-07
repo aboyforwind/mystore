@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 100px;
+}
+body{
+  font-size: 0.12rem;
+  font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei";
+}
+.w{
+  width: 7.5rem;
+  margin: 0 auto;
+}
+a{
+  color: #555;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+img{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.container{
+  background: #f5f6f5;
+}

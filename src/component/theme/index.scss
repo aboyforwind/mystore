@@ -1,0 +1,27 @@
+/*
+* @Author: Administrator
+* @Date:   2018-02-07 14:04:23
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-02-07 14:52:20
+*/
+.theme{
+  width: 100%;
+  overflow: hidden;
+}
+.title{
+  width: 100%;
+  line-height: 0.4rem;
+  height: 0.4rem;
+  margin:0.1rem 0;
+  color: #AB956D;
+  text-align: center;
+  font-size: 0.16rem;
+}
+.theme-item{
+  width: 50%;
+  float: left;
+}
+.theme-item.row{
+  width: 100%;
+  float: none;
+}

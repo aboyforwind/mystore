@@ -1,0 +1,20 @@
+/*
+* @Author: Administrator
+* @Date:   2018-02-06 13:04:57
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-02-07 14:03:31
+*/
+.ant-carousel .slick-dots{
+  bottom: 0.2rem;
+}
+.ant-carousel .slick-dots li button{
+  width: 0.1rem;
+  height: 0.1rem;
+  border-radius: 100%;
+  background: #b2b2b2;
+}
+.ant-carousel .slick-dots li.slick-active button{
+  width: 0.1rem;
+  height: 0.1rem;
+  background: #000;
+}
