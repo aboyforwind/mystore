@@ -2,13 +2,72 @@
 * @Author: Administrator
 * @Date:   2018-02-07 15:43:37
 * @Last Modified by:   Administrator
-* @Last Modified time: 2018-02-07 15:57:49
+* @Last Modified time: 2018-02-08 11:22:43
 */
 .category-container{
   width: 100%;
 }
-.left-contorl{
+
+/***********修改antd的样式********************/
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar{
+  position: fixed;
   width: 0.75rem;
+  left: 0;
+  top: 0.4rem;
+}
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-content{
+  padding:0.2rem 0.1rem 0.2rem 0.85rem;
+
+}
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-ink-bar{
+  left: 0;
+
+}
+.ant-tabs-ink-bar{
+  background: #ab956d;
+}
+.ant-tabs-nav .ant-tabs-tab-active{
+  color:#AB956D;
+}
+.product-item{
+  width: 100%;
+  text-align: center;
+}
+.category-main-image{
+  width: 100%;
+}
+.category-title{
+  display: inline-block;
+  text-align: center;
+  line-height: 0.25rem;
+  margin: 0.1rem 0;
+  color: #AB956D;
+}
+.category-title::before,.category-title::after{
+  content: '';
+  display: inline-block;
+  height: 1px;
+  width: 0.35rem;
+  background: #979797;
+  position: relative;
+  top:-0.04rem;
+  margin: 0 0.2rem;
+}
+.produts-container{
+  width: 100%;
+  overflow: hidden;
+}
+.product-box{
+  width: 33%;
   float: left;
-  border-right: 1px solid #D8D8D8;
+  padding: 0.1rem;
+}
+.product-name{
+  font-weight: normal;
+  font-size: 0.12rem;
+  height: 0.2rem;
+  line-height: 0.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

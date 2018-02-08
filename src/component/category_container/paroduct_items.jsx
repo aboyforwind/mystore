@@ -1,14 +1,10 @@
 import React from 'react'
-import { Tabs } from 'antd';
-
-import { get } from '../../request/index'
-
-import { allCategories, productByCategory } from '../../constant/api'
-// import imgHost from '../../constant/imgHost'
+import { inject, observer } from 'mobx-react'
+import imgHost from '../../constant/imgHost'
 
 import './index.scss'
 
-const { TabPane } = Tabs;
+@inject('products') @observer
 class ProductItem extends React.Component {
   constructor() {
     super()
@@ -17,28 +13,35 @@ class ProductItem extends React.Component {
     }
   }
   componentDidMount() {
-
+    const { id } = this.props.category
+    this.getProductByCategory(id)
   }
   getProductByCategory(id) {
-    const params = {
-      id,
-    }
-    get(productByCategory, params).then((res) => {
-      const { products } = this.state
-      products = res;
-      this.setState({
-        products,
-      })
-    })
+    const { products } = this.props
+    products.getProductByCategory(id)
   }
   render() {
+    const { category, products } = this.props
+    const { product } = products
+    const pro = product.get(category.id)
     return (
-      <div className="category-container">
-        <Tabs defaultActiveKey="1" >
-          <TabPane tab="Tab 1" key="1">Content of Tab Pane 1</TabPane>
-          <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
-          <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
-        </Tabs>
+      <div className="product-item">
+        <div className="category-main-image">
+          <img src={`${imgHost}${category.img.url}`} alt={category.name} />
+        </div>
+        <div className="category-title">
+          {category.name}
+        </div>
+        <div className="produts-container">
+          {
+            pro && pro.length ? pro.map(item => (
+              <div className="product-box" key={item.id}>
+                <img src={`${imgHost}${item.main_img_url}`} alt={item.name} />
+                <h3 className="product-name">{item.name}</h3>
+              </div>
+            )) : null
+          }
+        </div>
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import { inject, observer } from 'mobx-react'
+// import { inject, observer } from 'mobx-react'
 import Header from '../component/header/index'
 import Slider from '../component/slider/index'
 import Footer from '../component/footer/index'
@@ -10,7 +10,7 @@ import { get } from '../request/index'
 import Theme from '../component/theme/index'
 import RecentProducts from '../component/recent_products/index'
 
-@inject('user') @observer
+// @inject('user') @observer
 class Home extends React.Component {
   constructor() {
     super()

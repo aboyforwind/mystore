@@ -5,12 +5,12 @@ import { Provider } from 'mobx-react'
 import RouteMap from './routers/router_map'
 
 import './static/common.scss'
-import user from './stores/user'
+import products from './stores/product'
 
 const Root = () => (
   <div className="root">
     <BrowserRouter>
-      <Provider user={user}>
+      <Provider products={products}>
         <RouteMap />
       </Provider>
     </BrowserRouter>

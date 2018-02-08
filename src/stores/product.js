@@ -2,14 +2,29 @@
 * @Author: Administrator
 * @Date:   2018-02-06 12:26:03
 * @Last Modified by:   Administrator
-* @Last Modified time: 2018-02-07 16:38:04
+* @Last Modified time: 2018-02-08 10:34:09
 */
 import { action, observable } from 'mobx'
+import { get } from '../request/index'
+import { productByCategory } from '../constant/api'
 
-class User {
+class Products {
   @observable product = new Map()
-  @action getProductsByCategory() {
-
+  @action getProductByCategory(id) {
+    return new Promise((resolve, reject) => {
+      const key = id
+      if (this.product.get(key)) {
+        resolve()
+        return
+      }
+      const params = {
+        id,
+      }
+      get(productByCategory, params).then((res) => {
+        this.product.set(key, res)
+        resolve()
+      }).catch(reject)
+    })
   }
 }
-export default new User()
+export default new Products()

@@ -3,9 +3,10 @@ import { Tabs } from 'antd';
 
 import { get } from '../../request/index'
 
-import { allCategories, productByCategory } from '../../constant/api'
+import { allCategories } from '../../constant/api'
 // import imgHost from '../../constant/imgHost'
 
+import ProductItem from './paroduct_items'
 import './index.scss'
 
 const { TabPane } = Tabs;
@@ -17,10 +18,7 @@ class CategoryContainer extends React.Component {
     }
   }
   componentDidMount() {
-    this.getAllCategory().then((category) => {
-      const { id } = category
-      this.getProductByCategory(id)
-    })
+    this.getAllCategory()
   }
   getAllCategory() {
     get(allCategories).then((res) => {
@@ -29,25 +27,18 @@ class CategoryContainer extends React.Component {
       })
     })
   }
-  getProductByCategory(id) {
-    const params = {
-      id,
-    }
-    get(productByCategory, params).then((res) => {
-      const { products } = this.state
-      products[id] = res;
-      this.setState({
-        products,
-      })
-    })
-  }
   render() {
+    const { categories } = this.state
     return (
       <div className="category-container">
-        <Tabs defaultActiveKey="1" >
-          <TabPane tab="Tab 1" key="1">Content of Tab Pane 1</TabPane>
-          <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
-          <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
+        <Tabs defaultActiveKey="1" tabPosition="left">
+          {
+            categories.length ? categories.map(item => (
+              <TabPane tab={item.name} key={item.id}>
+                <ProductItem category={item} />
+              </TabPane>
+            )) : null
+          }
         </Tabs>
       </div>
     )

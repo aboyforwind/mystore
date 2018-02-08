@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-02-06 09:25:24
 * @Last Modified by:   Administrator
-* @Last Modified time: 2018-02-07 11:28:37
+* @Last Modified time: 2018-02-08 08:55:54
 */
 const path = require('path')
 const webpack = require('webpack')
@@ -73,7 +73,7 @@ const config = {
     publicPath: '/dist/',
     historyApiFallback: {
       index: path.join(__dirname,'../dist/index.html')
-    },
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import { get } from '../../request/index'
 import { themeApi } from '../../constant/api'
 import imgHost from '../../constant/imgHost'
@@ -34,7 +34,9 @@ class Theme extends React.Component {
         {
           themeData.length ? themeData.map((item, index) => (
             <div key={item.id} className={index === 2 ? 'theme-item row' : 'theme-item'}>
-              <img src={`${imgHost}${item.topic_img.url}`} alt={item.description} />
+              <Link to={`/theme/${item.id}`}>
+                <img src={`${imgHost}${item.topic_img.url}`} alt={item.description} />
+              </Link>
             </div>
           ))
           :
